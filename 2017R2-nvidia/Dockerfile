@@ -1,4 +1,4 @@
-FROM 1.1-glvnd-runtime-centos7
+FROM nvidia/opengl:1.1-glvnd-runtime-centos7
 
 MAINTAINER "Adib Afandi bin Abdullah <fendy90.oscura@gmail.com>"
 
