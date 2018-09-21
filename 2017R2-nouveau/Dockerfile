@@ -17,7 +17,7 @@ RUN yum -y update && \
     curl -b ./cookie.txt -L -o ${filename} "https://drive.google.com${query}" && \
     
     tar -xf dsv2017R2.tar.gz -C /opt/ && \
-    rm dsv2017R2.tar.gz && \
+    rm dsv2017R2.tar.gz pup && \
     yum -y remove yum -y install && clean all && rm -rf /var/cache/yum
 
 ENV QT_GRAPHICSSYSTEM="native"
