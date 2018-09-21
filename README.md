@@ -2,6 +2,18 @@
 
 There are two version: nouveau and nvidia-supported container. To use nvidia-supported container, you need to install nvidia driver and nvidia-docker2 on host.
 
+To download the container:
+
+ 1. nvidia-supported container:
+```
+docker pull afandiadib/discovery-studio-visualizer:2017R2-nvidia
+```
+ 2. nvidia-supported container:
+```
+docker pull afandiadib/discovery-studio-visualizer:2017R2-nouveau
+```
+
+
 - To run nvidia-accelerated container:
 ```
 docker run --rm --user=$(id -u) \
