@@ -14,11 +14,11 @@ RUN yum -y update && \
     filename=dsv2017R2.tar.gz && \
     fileid=1o5KZmQ-JxK-ntPCqQENRoAsayrCqOd3M && \
     query=`curl -c ./cookie.txt -s -L "https://drive.google.com/uc?export=download&id=${fileid}" | ./pup 'a#uc-download-link attr{href}' | sed -e 's/amp;//g'` && \
-    curl -b ./cookie.txt -L -o ${filename} "https://drive.google.com${query}" && \
+    curl -s -b ./cookie.txt -L -o ${filename} "https://drive.google.com${query}" && \
     
     tar -xf dsv2017R2.tar.gz -C /opt/ && \
     rm dsv2017R2.tar.gz pup && \
-    yum -y remove yum -y install && clean all && rm -rf /var/cache/yum
+    yum -y remove curl unzip wget && yum -y clean all && rm -rf /var/cache/yum
 
 ENV QT_GRAPHICSSYSTEM="native"
 
