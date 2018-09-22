@@ -1,6 +1,6 @@
 # BIOVIA Discovery Studio Visualizer Client 2017R2 Container
 
-There are two version: nouveau and nvidia-supported container. To use nvidia-supported container, you need to install nvidia driver and nvidia-docker2 on host.
+There are two version: mesa and nvidia-supported container. To use nvidia-supported container, you need to install nvidia driver and nvidia-docker2 on host.
 
 To download the container:
 
@@ -8,13 +8,13 @@ To download the container:
 ```
 docker pull afandiadib/discovery-studio-visualizer:2017R2-nvidia
 ```
- 2. nvidia-supported container:
+ 2. mesa-supported container:
 ```
-docker pull afandiadib/discovery-studio-visualizer:2017R2-nouveau
+docker pull afandiadib/discovery-studio-visualizer:2017R2-mesa
 ```
 
 
-- To run nvidia-accelerated container:
+- To run nvidia-supported container:
 ```
 docker run --rm --user=$(id -u) \
            --env=DISPLAY \
@@ -31,7 +31,7 @@ docker run --rm --user=$(id -u) \
            --runtime=nvidia \
            afandiadib/discovery-studio-visualizer:2017R2-nvidia
 ```
-- To run nouveau-accelerated container:
+- To run mesa-supported container:
 ```
 docker run --rm --user=$(id -u) \
            --env=DISPLAY \
@@ -46,5 +46,5 @@ docker run --rm --user=$(id -u) \
            --volume=/usr/share/fonts/:/usr/share/fonts/:ro \
            --volume=/usr/share/icons:/usr/share/icons \
            --device=/dev/dri \
-           afandiadib/discovery-studio-visualizer:2017R2-nouveau
+           afandiadib/discovery-studio-visualizer:2017R2-mesa
 ```
