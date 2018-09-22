@@ -18,7 +18,7 @@ RUN yum -y update && \
     
     tar -xf dsv2017R2.tar.gz -C /opt/ && \
     rm dsv2017R2.tar.gz pup && \
-    yum -y remove yum -y install && clean all && rm -rf /var/cache/yum
+    yum -y remove curl unzip wget && yum -y clean all && rm -rf /var/cache/yum
 
 ENV QT_GRAPHICSSYSTEM="native"
 
