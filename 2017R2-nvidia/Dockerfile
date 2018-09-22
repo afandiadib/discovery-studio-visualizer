@@ -8,7 +8,7 @@ RUN yum -y update && \
 
     yum -y install gstreamer-plugins-base.x86_64 xorg-x11-drv-ati xorg-x11-drv-dummy xorg-x11-drv-evdev xorg-x11-drv-fbdev xorg-x11-drv-intel xorg-x11-drv-nouveau xorg-x11-drv-qxl xorg-x11-drv-synaptics xorg-x11-drv-v4l xorg-x11-drv-vesa xorg-x11-drv-vmmouse xorg-x11-drv-vmware xorg-x11-drv-void xorg-x11-drv-wacom xorg-x11-font-utils xorg-x11-fonts-Type1 xorg-x11-proto-devel xorg-x11-server-common xorg-x11-server-utils xorg-x11-xkb-utils mesa-filesystem mesa-libEGL mesa-libGL mesa-libGLES mesa-libgbm mesa-libwayland-egl mesa-libxatracker libX11-devel libXau-devel libXcomposite libXcursor libXdamage libXdmcp libXfixes libXfont libXfont2 libXft libXi libXinerama libXrandr libXrender libXres libXtst libXv libXvMC libXxf86dga libXxf86misc libXxf86vm mesa-dri-drivers xorg-x11-drivers xorg-x11-utils xorg-x11-xinit xorg-x11-server-Xorg && \
 
-    yum -y install curl unzip wget && \
+    yum -y install unzip wget && \
     wget https://github.com/ericchiang/pup/releases/download/v0.4.0/pup_v0.4.0_linux_amd64.zip && \
     unzip pup_v0.4.0_linux_amd64.zip && chmod +x pup && \
     filename=dsv2017R2.tar.gz && \
@@ -18,7 +18,7 @@ RUN yum -y update && \
     
     tar -xf dsv2017R2.tar.gz -C /opt/ && \
     rm dsv2017R2.tar.gz pup && \
-    yum -y remove curl unzip wget && yum -y clean all && rm -rf /var/cache/yum
+    yum -y remove unzip wget && yum -y clean all && rm -rf /var/cache/yum
 
 ENV QT_GRAPHICSSYSTEM="native"
 
