@@ -19,4 +19,4 @@ RUN yum -y update && \
 
 ENV QT_GRAPHICSSYSTEM="native"
 
-CMD /opt/BIOVIA/DiscoveryStudio40/bin/DiscoveryStudio40
+CMD sh -c "/opt/Accelrys/server/linux_bin/startserver && /opt/Accelrys/DiscoveryStudio40/bin/DiscoveryStudio40"
